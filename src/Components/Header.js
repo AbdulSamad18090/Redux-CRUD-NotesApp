@@ -13,7 +13,7 @@ export default function Header() {
         className=" bg-yellow-500 rounded text-gray-700 py-1 px-2"
         onClick={() => {
           navigate("/create");
-          dispatch(addNote());
+          //dispatch(addNote());
         }}
       >
         Add Note

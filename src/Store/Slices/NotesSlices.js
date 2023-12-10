@@ -41,7 +41,9 @@ const notesSlice = createSlice({
     loading: false,
   },
   reducers: {
-    addNote(state, action) {},
+    addNote(state, action) {
+      state.notes.push(action.payload);
+    },
     deleteNote(state, action) {},
     updateNote(state, action) {},
     oldestFirst(state, action) {
@@ -57,9 +59,7 @@ const notesSlice = createSlice({
     },
     [getNotes.fulfilled]: (state, action) => {
       state.notes = action.payload;
-      setTimeout(() => {
-        
-      }, 1000);
+      setTimeout(() => {}, 1000);
       state.loading = false;
     },
     [getNotes.rejected]: (state) => {},
