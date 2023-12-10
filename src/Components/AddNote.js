@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setDescription, setTitle } from "../Store/Slices/AddNoteSlice";
-import { PostNewNote, addNote } from "../Store/Slices/NotesSlices";
+import { PostNewNote, addNote, getNotes } from "../Store/Slices/NotesSlices";
 
 export default function AddNote() {
   const navigate = useNavigate();
@@ -60,10 +60,10 @@ export default function AddNote() {
           className="border border-gray-700 w-full px-1 py-2 rounded-r bg-yellow-500 text-gray-700"
           onClick={() => {
             dispatch(PostNewNote({ title, description }));
+            dispatch(getNotes());
             navigate("/");
             setNoteTitle("");
             setNoteDescription("");
-
           }}
         >
           SUBMIT

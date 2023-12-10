@@ -67,7 +67,6 @@ const notesSlice = createSlice({
     },
     [PostNewNote.fulfilled]: (state, action) => {
       state.notes.push(action.payload);
-      getNotes();
       state.loading = false;
     },
     [PostNewNote.rejected]: (state) => {},
