@@ -60,7 +60,6 @@ export default function AddNote() {
           className="border border-gray-700 w-full px-1 py-2 rounded-r bg-yellow-500 text-gray-700"
           onClick={() => {
             dispatch(PostNewNote({ title, description }));
-            dispatch(addNote({title, description}))
             navigate("/");
             setNoteTitle("");
             setNoteDescription("");
