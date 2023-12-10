@@ -41,9 +41,7 @@ const notesSlice = createSlice({
     loading: false,
   },
   reducers: {
-    addNote(state, action) {
-      state.notes.push(action.payload);
-    },
+    addNote(state, action) {},
     deleteNote(state, action) {},
     updateNote(state, action) {},
     oldestFirst(state, action) {
@@ -68,6 +66,7 @@ const notesSlice = createSlice({
       state.loading = true;
     },
     [PostNewNote.fulfilled]: (state, action) => {
+      state.notes.push(action.payload);
       state.loading = false;
     },
     [PostNewNote.rejected]: (state) => {},
