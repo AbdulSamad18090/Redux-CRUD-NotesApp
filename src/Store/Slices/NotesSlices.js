@@ -57,6 +57,9 @@ const notesSlice = createSlice({
     },
     [getNotes.fulfilled]: (state, action) => {
       state.notes = action.payload;
+      setTimeout(() => {
+        
+      }, 1000);
       state.loading = false;
     },
     [getNotes.rejected]: (state) => {},

@@ -21,7 +21,7 @@ export default function NotesContainer() {
 
   useEffect(() => {
     dispatch(getNotes());
-  }, []);
+  }, [dispatch]);
 
   const handleItemClick = (itemId) => {
     setClickedItemId(itemId);
